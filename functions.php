@@ -10,6 +10,7 @@ add_action('wp_enqueue_scripts', 'herrnaset_enqueue_parent_styles');
 
 
 /**
- * Dashboard modifications
+ * Dashboard/backend modifications
  */
 require get_stylesheet_directory() . '/inc/dashboard.php';
+//require get_stylesheet_directory() . '/inc/remove-default-post-type.php';
