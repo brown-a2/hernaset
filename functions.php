@@ -36,6 +36,16 @@ require get_stylesheet_directory() . '/inc/countries.php';
  */
 require get_stylesheet_directory() . '/inc/flag-management.php';
 
+/**
+ * ACF custom fields
+ */
+require get_stylesheet_directory() . '/inc/acf/acf-custom-fields.php';
+
+/**
+ * ACF custom fields
+ */
+require get_stylesheet_directory() . '/inc/author.php';
+
 
 /**
  * Replace archive category meta posts from twentytwentyfour theme with my own custom

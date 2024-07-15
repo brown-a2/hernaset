@@ -1,10 +1,10 @@
 <?php
 
 // Function to get an array of flag icons and category links based on the current post's categories
-function get_country_flags_with_links_from_categories() {
-    global $countries_with_flags; // Access the global array
+function herrnaset_get_country_flags() {
+    global $countries_with_flags;
     
-    $flags = []; // Initialize an empty array to store flag icons with links
+    $flags = [];
     
     // Get the current post's categories
     $categories = get_the_category();
@@ -33,8 +33,9 @@ function get_country_flags_with_links_from_categories() {
 }
 
 // Render callback function for the dynamic block
-function render_country_flag_block($attributes) {
-    $flag_data = get_country_flags_with_links_from_categories();
+function herrnaset_render_country_flag_block($attributes) {
+
+    $flag_data = herrnaset_get_country_flags();
 
     if (!empty($flag_data)) {
         $output = '<div class="country-flags">';
@@ -52,9 +53,10 @@ function render_country_flag_block($attributes) {
 }
 
 // Register the dynamic block
-add_action('init', 'register_country_flag_block');
-function register_country_flag_block() {
-    register_block_type('twentytwentyfour/country-flag', array(
-        'render_callback' => 'render_country_flag_block',
+add_action('init', 'herrnaset_register_country_flag_block');
+
+function herrnaset_register_country_flag_block() {
+    register_block_type('herrnaset/country-flag', array(
+        'render_callback' => 'herrnaset_render_country_flag_block',
     ));
 }
